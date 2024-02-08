@@ -1,43 +1,75 @@
-body {
-    background-color: black;
-    color: yellow;
-}
-
-h1 {
-    text-align: center;
-}
-
-.container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-}
-
-.board {
-    height: 50vmin;
-    width: 50vmin;
-    display: grid;
-    grid-template-rows: 1fr 1fr 1fr;
-    grid-template-columns: 1fr 1fr 1fr;
-}
-
-.square {
-    border: 1px solid yellow;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: sans-serif;
-    font-size: 12vmin;
-}
-
-button {
-    text-align: center;
-    display: inline-block;
-    margin: 0 auto;
-    padding: 2vmin;
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    /* viewport (the whole window) units: vh (viewport height), vw (viewport width), vmin (v% of the smallest between vh and vw) */
+  height: 100vh;
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+  display: flex;  
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+    
+  }
+  
+  header {
+  font-size: 4vmin; 
+  color: darkgrey;  
+  letter-spacing: 1vmin;  
+  }
+  
+  h1 {
+    color: grey;
     font-size: 3vmin;
+  }
+  
+  #markers {
+   display: grid;
+   grid-template-columns: repeat(7, 10vmin);
+   gap: 1vmin;
+   margin-top: 1.5vmin; 
+  }
+  
+  #markers > div {
+    height: 10vmin;
+    border-width: 5vmin;
+    border-style: solid;
+    border-color: lightgrey transparent transparent;
+    transform: scale(0.7);
+  }
+  
+  /* hover means this line will be only executed when the mouse hover over markers */ 
+  #markers >div:hover {
+    transform: scale(0.9);
+    transition: transform 150ms ease-in;
+    border-top-color: darkgray;
+  }
+  
+  #board {
+    display: grid;
+    grid-template-columns: repeat(7, 10vmin);
+    grid-template-rows: repeat(6, 10vmin);
+    gap: 1vmin;
+    margin-top: -4vmin;
+  }
+  
+  #board > div {
+    border-radius: 50%;
+    border: 0.1vmin solid grey;
+  }
+  
+  button {
+    margin-top: 4vmin;
+    padding: 2vmin;
+    font-size: 2vmin;
     border-radius: 4vmin;
-    border: 0.1vmin;
-    background-color: yellow;
-}
+    border: 0.1vmin solid grey;
+    color: grey;
+  }
+  
+  button:hover {
+    color: white;
+    background-color: darkgray;
+  }
