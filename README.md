@@ -1,1 +1,1 @@
-Connect Four game
+Connect Four Game
